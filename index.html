@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人员轨迹进度条</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .progress-bar{
+            width: 500px;
+            height: 16px;
+            background-color: #5b97c4;
+            border-radius: 8px;
+            position: relative;
+        }
+        .progress-bar .bar{
+            border-radius: 8px;
+            float: left;
+            height: 100%;
+
+        }
+        .short{
+            width: 20%;
+            background-color: #5b97c4;
+        }
+        .middling{
+            width: 30%;
+            background-color: #ad4040;
+        }
+        .long{
+            width: 40%;
+            background-color: #14c893;
+        }
+        .background-arrows{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .background-arrows img{
+            max-height: 12px;
+            max-width: 12px;
+        }
+        .locus{
+            display: flex;
+            width: 500px;
+            height: 136px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .marker{
+            width: 100%;
+            height: 32px;
+            position: relative;
+        }
+        .marker div{
+            background-image: url("./images/marker-backage.png");
+            width: 32px;
+            height: 32px;
+            background-size: 32px;
+            text-align: center;
+            line-height: 24px;
+            color: white;
+            font-size: 12px;
+            position: absolute;
+            top: 0px;
+            transform: translateX(-50%);
+        }
+        .marker div:nth-child(1){
+            left: 0px;
+        }
+        .marker div:nth-child(2){
+            left: 20%;
+        }
+        .marker div:nth-child(3){
+            left: 50%;
+        }
+        .marker div:nth-child(4){
+            left: 90%;
+        }
+        .locus-time{
+            width: 100%;
+            height: 16px;
+            position: relative;
+        }
+        .locus-time div{
+            transform: translateX(-50%);
+            position: absolute;
+            top: 0px;
+        }
+        .locus-time div:nth-child(1),.locus-info-item:nth-child(1){
+            left: 20%;
+        }
+        .locus-time div:nth-child(2),.locus-info-item:nth-child(2){
+            left: 50%;
+        }
+        .locus-time div:nth-child(3),.locus-info-item:nth-child(3){
+            left: 90%;
+        }
+        .locus-info{
+            width: 100%;
+            height: 64px;
+            position: relative;
+            margin-top: 8px;
+        }
+        .locus-info-item{
+            border: 2px solid #068b88;
+            border-radius: 8px;
+            padding: 4px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-around;
+            width: 120px;
+            height: 64px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="locus">
+    <div class="marker">
+        <div>起</div>
+        <div>经</div>
+        <div>时</div>
+        <div>经</div>
+    </div>
+    <div class="progress-bar">
+        <div class="bar short"></div>
+        <div class="bar middling"></div>
+        <div class="bar long"></div>
+        <div class="background-arrows">
+            <img src="images/right-arrows.png">
+            <img src="images/right-arrows.png">
+            <img src="images/right-arrows.png">
+            <img src="images/right-arrows.png">
+            <img src="images/right-arrows.png">
+            <img src="images/right-arrows.png">
+            <img src="images/right-arrows.png">
+            <img src="images/right-arrows.png">
+            <img src="images/right-arrows.png">
+            <img src="images/right-arrows.png">
+            <img src="images/right-arrows.png">
+        </div>
+    </div>
+    <div class="locus-time">
+        <div>8:30</div>
+        <div>8:40</div>
+        <div>8:50</div>
+    </div>
+    <div class="locus-info">
+        <div class="locus-info-item">
+            <div>新天地广场</div>
+            <div>预计耗时:7分钟</div>
+            <div>实际耗时:10分钟</div>
+        </div>
+        <div class="locus-info-item">
+            <div>新天地广场</div>
+            <div>预计耗时:7分钟</div>
+            <div>实际耗时:10分钟</div>
+        </div>
+        <div class="locus-info-item">
+            <div>新天地广场</div>
+            <div>预计耗时:7分钟</div>
+            <div>实际耗时:10分钟</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
